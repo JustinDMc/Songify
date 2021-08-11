@@ -1,3 +1,4 @@
 class Song < ApplicationRecord
-    belongs_to :quiz
+    has_many :posts
+    has_many :users, through: :posts
 end
