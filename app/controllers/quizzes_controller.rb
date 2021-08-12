@@ -1,4 +1,8 @@
 class QuizzesController < ApplicationController
-    has_many :quiz_questions
-    has_many :questions, through: :quiz_questions
+
+    def index 
+        quizzes = Quiz.all 
+        render json: quizzes, only: [:id, :topic], include: :questions
+    end  
+
 end

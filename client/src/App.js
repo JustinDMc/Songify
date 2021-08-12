@@ -1,47 +1,76 @@
 import './App.css';
+import React,{ useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import {Provider, useDispatch, useSelector} from "react-redux" 
 import {store} from "./store"
+import NavBar from "./NavBar"
+import About from "./About"
+import Signup from "./Signup"
+import Login from "./Login"
+import Feed from "./Feed"
+import Home from "./Home"
 
 function App() {
-  //Always gonna use useDispatch
-  const dispatch = useDispatch();
+  const [songCollection, setSongCollection] = useState([]);
+  const [postCollection, setPostCollection] = useState([]);
+  const [commentCollection, setCommentCollection] = useState([]);
+  const [userCollection, setUserCollection] = useState([]);
 
-  //Declare variables here that represent initial state in the reducer file  
-  const usernameInput = useSelector(state => state.usernameInput);
-  const passwordInput = useSelector(state => state.passwordInput);
+  useEffect(() => {
+    fetch("/songs")
+    .then(res => res.json())
+    .then(data => setSongCollection(data))
+  }, [])
 
-  //dispatch always takes two arguments, the type which determines the case in reducer
-  //and the payload which is essentially what you're using to modify that state
-  const handleUsernameChange = (e) => {
-    dispatch({
-      type: "CHANGE_USERNAME_INPUT",
-      payload: e.target.value
-    })
-  }
+  useEffect(() => {
+    fetch("/posts")
+    .then(res => res.json())
+    .then(data => setPostCollection(data))
+  }, [])
 
-  const handlePasswordChange = (e) => {
-    dispatch({
-      type: "CHANGE_PASSWORD_INPUT",
-      payload: e.target.value
-    })
-  }
+  useEffect(() => {
+    fetch("/users")
+    .then(res => res.json())
+    .then(data => setUserCollection(data))
+  }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(usernameInput, passwordInput)
-  }
+  useEffect(() => {
+    fetch("/comments")
+    .then(res => res.json())
+    .then(data => setCommentCollection(data))
+  }, [])
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input onChange={handleUsernameChange} type="text"></input>
-      <input onChange={handlePasswordChange} type="text"></input>
-      <input type="submit"></input>
-    </form>
+    <div className="App">
+      <Switch>
+        <Route exact path ="/">
+          <NavBar />
+          <Login />
+        </Route>
+        <Route exact path ="/signup">
+          <NavBar />
+          <Signup />
+        </Route>
+        <Route exact path ="/about">
+          <NavBar />
+          <About />
+        </Route>
+        <Route exact path ="/home">
+          <NavBar />
+          <Home />
+        </Route>
+        <Route exact path ="/feed">
+          <NavBar />
+          <Feed postCollection={postCollection}/>
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
-export default (() => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-));
+export default App;
+// (() => (
+//   <Provider store={store}>
+//     <App />
+//   </Provider>
+// ));
