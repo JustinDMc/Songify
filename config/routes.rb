@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   resources :comments 
 
-  resources :posts 
+  resources :posts, only: [:index, :create]
 
   # overlap
-  resources :songs, only: [:index]
+  resources :songs, only: [:index, :create]
 
   # quiz side
   resources :quizzes, only: [:index]

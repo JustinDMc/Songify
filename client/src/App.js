@@ -1,14 +1,15 @@
 import './App.css';
 import React,{ useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import {Provider, useDispatch, useSelector} from "react-redux" 
-import {store} from "./store"
+import {Provider, useDispatch, useSelector} from "react-redux"; 
+import {store} from "./store";
 import NavBar from "./NavBar"
-import About from "./About"
+import About from "./About";
 import Signup from "./Signup"
 import Login from "./Login"
-import Feed from "./Feed"
-import Home from "./Home"
+import Feed from "./Feed";
+import Home from "./Home";
+import PostPage from './PostPage';
 
 function App() {
   const [songCollection, setSongCollection] = useState([]);
@@ -59,6 +60,10 @@ function App() {
           <NavBar />
           <Home />
         </Route>
+        <Route exact path ="/post_page">
+          <NavBar />
+          <PostPage songCollection={songCollection}/>
+        </Route>
         <Route exact path ="/feed">
           <NavBar />
           <Feed postCollection={postCollection}/>
@@ -68,9 +73,9 @@ function App() {
   );
 }
 
-export default App;
-// (() => (
-//   <Provider store={store}>
-//     <App />
-//   </Provider>
-// ));
+export default 
+(() => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+));
