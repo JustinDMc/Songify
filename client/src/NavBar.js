@@ -7,10 +7,10 @@ function NavBar() {
 
     return (
         <div className="Navbar-Div">
-            <Navbar style={{display: "flex", margin: "0px"}}>
+            <Navbar style={{display: "flex", margin: "0px", height: "90px"}}>
                 <div className="logo/name" style={{flex: "20%", textAlign: "left", marginLeft: "40px"}}> 
                     <h1 className="header" style={{color: "white", margin: "0px"}}
-                    > <Logo /> deMEstify </h1> 
+                    > <Logo style={{marginBottom: "6px"}}/> deMEstify </h1> 
                 </div>
                 <div className="NavLinks" style={{flex: "80%", textAlign: "right", marginRight: "40px"}}>
                     <NavLink exact to="/about">About</NavLink>

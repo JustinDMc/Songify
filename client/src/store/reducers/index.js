@@ -2,7 +2,7 @@
 export const initialState = {
     usernameInput: "",
     passwordInput: "",
-    // songData: []
+    // postLikes: 0
 }
 
 export const reducer = (state, action) => {
@@ -13,8 +13,8 @@ export const reducer = (state, action) => {
         case "CHANGE_PASSWORD_INPUT":
             return {...state, passwordInput: action.payload}
         break
-        // case "SET_SONG_DATA":
-        //     return {...state, songData: action.payload}
+        // case "INCREMENT_LIKES":
+        //     return {...state, postLikes: action.payload}
         // break
     }
     return state

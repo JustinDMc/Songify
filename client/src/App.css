@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
-  background-color: darkgreen;
-  min-height: 100vh
+  background-color: rgb(53, 44, 134);
+  min-height: 100vh;
+  margin: 0
 }
