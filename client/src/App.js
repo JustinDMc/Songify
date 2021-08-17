@@ -66,7 +66,7 @@ function App() {
         </Route>
         <Route exact path ="/feed">
           <NavBar />
-          <Feed postCollection={postCollection}/>
+          <Feed userCollection={userCollection} postCollection={postCollection}/>
         </Route>
       </Switch>
     </div>

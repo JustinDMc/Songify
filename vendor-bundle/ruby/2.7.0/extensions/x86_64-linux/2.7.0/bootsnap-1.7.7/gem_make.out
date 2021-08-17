@@ -1,0 +1,15 @@
+current directory: /home/justindmc/justin.mcarthur/Development/code/Mod5/deMEstify/vendor-bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/2.7.0 -r ./siteconf20210817-20514-d71vvv.rb extconf.rb
+creating Makefile
+
+current directory: /home/justindmc/justin.mcarthur/Development/code/Mod5/deMEstify/vendor-bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /home/justindmc/justin.mcarthur/Development/code/Mod5/deMEstify/vendor-bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/justindmc/justin.mcarthur/Development/code/Mod5/deMEstify/vendor-bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -m 0755 bootsnap.so ./.gem.20210817-20514-8z3mma/bootsnap

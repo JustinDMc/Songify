@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar } from "./styled";
-import { Logo } from "./styled"
+import { HeaderLogo } from "./styled"
 import {NavLink} from "react-router-dom"
 
 function NavBar() {
@@ -10,7 +10,7 @@ function NavBar() {
             <Navbar style={{display: "flex", margin: "0px", height: "90px"}}>
                 <div className="logo/name" style={{flex: "20%", textAlign: "left", marginLeft: "40px"}}> 
                     <h1 className="header" style={{color: "white", margin: "0px"}}
-                    > <Logo style={{marginBottom: "6px"}}/> deMEstify </h1> 
+                    > <HeaderLogo style={{marginBottom: "6px"}}/> Songify </h1> 
                 </div>
                 <div className="NavLinks" style={{flex: "80%", textAlign: "right", marginRight: "40px"}}>
                     <NavLink exact to="/about">About</NavLink>

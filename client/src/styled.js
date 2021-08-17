@@ -1,9 +1,13 @@
 import styled from "styled-components"
-import { Lightbulb } from "@styled-icons/open-iconic/Lightbulb"
+// import { Lightbulb } from "@styled-icons/open-iconic/Lightbulb"
+import { Heart } from "@styled-icons/boxicons-regular/Heart"
+import { Comment } from "@styled-icons/boxicons-regular/Comment"
+import { DotsHorizontal } from "@styled-icons/boxicons-regular/DotsHorizontal"
+import { Music } from "@styled-icons/crypto/Music"
 
 
 export const Navbar = styled.nav`
-  background: #262626;
+  background: #000000;
   height: 4.0em;
   display: flex;
   align-items: center;
@@ -19,7 +23,19 @@ export const Navbar = styled.nav`
   }
 `;
 
-export const Logo = styled(Lightbulb)`
+// export const PostButton = styled.button`
+// `
+
+export const HeaderLogo = styled(Music)`
 color: white;
 height: 1.2em
+`
+
+export const HeartLogo = styled(Heart)`
+`
+
+export const CommentLogo = styled(Comment)`
+`
+
+export const DotsLogo = styled(DotsHorizontal)`
 `
