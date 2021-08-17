@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Palette+Mosaic&family=Source+Code+Pro:wght@500&display=swap');
+
+/* @keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+} */
+
 .App {
-  background-color: rgb(53, 44, 134);
+  background: url(https://images.wallpaperscraft.com/image/headphones_bw_headset_120277_1920x1080.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   min-height: 100vh;
-  margin: 0
+  font-family: 'Source Code Pro', monospace;
+  /* animation-name: example; 
+  animation-duration: 4s; */
 }

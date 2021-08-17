@@ -36,6 +36,7 @@ function PostPage( {songCollection } ) {
 
     function handlePostSubmit(e){
         const post = {
+            id: 5,
             user_id: 1,
             song_id: 11,
             thoughts: thoughts,
@@ -54,10 +55,10 @@ function PostPage( {songCollection } ) {
     return (
         <div>
             {songCreated? 
-            <form className="login-form" style={{backgroundColor: "white", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "350px", margin: "auto", marginTop: "250px", textAlign: "center"}} onSubmit={handleSongSubmit}>
+            <form className="login-form" style={{backgroundColor: "white", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "475px", margin: "auto", marginTop: "250px", textAlign: "center"}} onSubmit={handleSongSubmit}>
                 <h1 style={{color: "#992b1d"}}>What Song Are You Sharing?</h1>
                 <label style={{fontSize: "24px"}}>Genre  </label>
-                <TextField size="small" variant="outlined" type="text" 
+                <TextField style={{marginRight: "0px"}} size="small" variant="outlined" type="text" 
                     placeholder="Genre..."
                     name="genre" 
                     value={genre}
@@ -83,7 +84,7 @@ function PostPage( {songCollection } ) {
                 />
                 <br></br>
                 <br></br>
-                <label style={{fontSize: "24px"}}>Image URL  </label>
+                <label style={{fontSize: "24px"}}>Album Cover URL  </label>
                 <TextField size="small" variant="outlined"
                     placeholder="Image URL..."
                     name="image_url" 
