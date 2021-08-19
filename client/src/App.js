@@ -51,23 +51,23 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path ="/">
-          <NavBar />
+          <NavBar currentUser={currentUser}/>
           <Login setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path ="/signup">
-          <NavBar />
+          <NavBar currentUser={currentUser}/>
           <Signup setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path ="/about">
-          <NavBar />
+          <NavBar currentUser={currentUser}/>
           <About />
         </Route>
         <Route exact path ="/home">
-          <NavBar />
+          <NavBar currentUser={currentUser}/>
           <Home />
         </Route>
         <Route exact path ="/post_page">
-          <NavBar />
+          <NavBar currentUser={currentUser}/>
           <PostPage setAllPosts={setAllPosts} allPosts={allPosts} songCollection={songCollection} history={history}/>
         </Route>
         {/* <Route exact path ="/post_thoughts">

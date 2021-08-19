@@ -10,6 +10,7 @@ function PostThoughts( { history, allPosts, setAllPosts, songDigit } ) {
         e.preventDefault();
         const post = {
             user_id: 1,
+            // profile_pic_url: "https://data.whicdn.com/images/344524632/original.jpg",
             song_id: (songDigit + 1),
             thoughts: thoughts,
             likes: 0
@@ -24,7 +25,7 @@ function PostThoughts( { history, allPosts, setAllPosts, songDigit } ) {
         const postData = await res.json();
         if(res.ok) {
             setAllPosts([...allPosts, post])
-            history.push("/feed")
+            history.push("/home")
         };
     }
 
