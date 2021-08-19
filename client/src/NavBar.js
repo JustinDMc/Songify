@@ -13,6 +13,7 @@ function NavBar() {
                     > <HeaderLogo style={{marginBottom: "6px"}}/> Songify </h1> 
                 </div>
                 <div className="NavLinks" style={{flex: "80%", textAlign: "right", marginRight: "40px"}}>
+                    {/* <label><h3 style={{color: "white"}}>Welcome Justin</h3></label> */}
                     <NavLink exact to="/about">About</NavLink>
                     <NavLink exact to="/">Login</NavLink>
                     <NavLink exact to="/signup">Signup</NavLink>
