@@ -32,12 +32,35 @@ song3 = Song.create(genre: "Pop", artist: "Michael Jackson", title: "Beat It", a
 song4 = Song.create(genre: "Pop", artist: "Miley Cyrus", title: "Never Be Me", album_img_url: "https://images.genius.com/d42ed1c943e01f99a4c3b15065d36c53.625x625x1.png")
 song5 = Song.create(genre: "Pop", artist: "Taylor Swift", title: "Shake it Off", album_img_url: "https://upload.wikimedia.org/wikipedia/en/c/c4/Taylor_Swift_-_Shake_It_Off.png")
 
+
 # Country Songs (sad/down vibe)
 song6 = Song.create(genre: "Country", artist: "Tim McGraw", title: "It's Your Love", album_img_url: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/It%27syourlove.jpg/220px-It%27syourlove.jpg")
 song7 = Song.create(genre: "Country", artist: "Carrie Underwood", title: "Drinking Alone", album_img_url: "https://upload.wikimedia.org/wikipedia/en/5/57/Carrie_Underwood%2C_Drinking_Alone_single_cover_art.jpg")
 song8 = Song.create(genre: "Country", artist: "Brad Paisley", title: "Whiskey Lullaby", album_img_url: "https://upload.wikimedia.org/wikipedia/en/a/a2/Brad_Paisley_Whiskey_Lullaby.jpg")
 song9 = Song.create(genre: "Country", artist: "Keith Urban", title: "Only You Can Love Me This Way", album_img_url: "https://images-na.ssl-images-amazon.com/images/I/81lleqz5QXL._SL1400_.jpg")
 song10 = Song.create(genre: "Country", artist: "Blake Shelton", title: "Boys 'Round Here", album_img_url: "https://upload.wikimedia.org/wikipedia/en/e/e3/Blake_Shelton_Boys_%27Round_Here.jpg")
+
+# Rap Songs (pump up/ angry vibe)
+song11 = Song.create(genre: "Rap", artist: "Eminem", title: "Lose Yourself", album_img_url: "https://www.justshady.com/images/8-mile-soundtrack-album-cover.jpg")
+song12 = Song.create(genre: "Rap", artist: "Kendrick Lamar", title: "Backseat Freestyle", album_img_url: "https://images.genius.com/2625578884f4cc99f060bc75a16bf600.1000x1000x1.jpg")
+song13 = Song.create(genre: "Rap", artist: "Jay-Z", title: "Empire State of Mind", album_img_url: "https://auctions.royaltyexchange.com/thumbnail/0d0baefc72a22cb121e047194b9ea413")
+song14 = Song.create(genre: "Rap", artist: "Kanye West", title: "Monster", album_img_url: "https://m.media-amazon.com/images/I/61IWOsLc2QL._SS500_.jpg")
+song15 = Song.create(genre: "Rap", artist: "Lil Wayne", title: "A Milli", album_img_url: "https://pbs.twimg.com/media/C9uGYe9XoAAfZ-s.jpg")
+
+# Indie Songs (grooving, relaxed vibe)
+song16 = Song.create(genre: "Indie", artist: "Current Joys", title: "Kids", album_img_url: "https://f4.bcbits.com/img/a1983814605_16.jpg")
+song17 = Song.create(genre: "Indie", artist: "Bad Suns", title: "Cardiac Arrest", album_img_url: "https://images-na.ssl-images-amazon.com/images/I/71S3-TiMcvL._SL1500_.jpg")
+song18 = Song.create(genre: "Indie", artist: "COIN", title: "Let It All Out (10:05)", album_img_url: "https://m.media-amazon.com/images/I/A1ZTtDmwPLL._SS500_.jpg")
+song19 = Song.create(genre: "Indie", artist: "Wallows", title: "Just Like A Movie", album_img_url: "https://images.genius.com/a16c1e511ecf7741217439e0c49dedcd.999x999x1.jpg")
+song20 = Song.create(genre: "Indie", artist: "The Killers", title: "Mr. Brightside", album_img_url: "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/The_Killers_-_Hot_Fuss.png/220px-The_Killers_-_Hot_Fuss.png")
+
+# Rock Songs (angry / energetic vibes)
+song21 = Song.create(genre: "Rock", artist: "Pink Floyd", title: "Wish You Were Here", album_img_url: "https://images-na.ssl-images-amazon.com/images/I/810CGm6%2BGbL._SL1500_.jpg")
+song22 = Song.create(genre: "Rock", artist: "Queen", title: "Bohemian Rhapsody", album_img_url: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Bohemian_Rhapsody.png/220px-Bohemian_Rhapsody.png")
+song23 = Song.create(genre: "Rock", artist: "The Beatles", title: "Yesterday", album_img_url: "https://upload.wikimedia.org/wikipedia/en/5/55/The_Beatles_-_Butcher_Cover.jpg")
+song24 = Song.create(genre: "Rock", artist: "AC/DC", title: "Back In Black", album_img_url: "https://upload.wikimedia.org/wikipedia/commons/9/92/ACDC_Back_in_Black.png")
+song25 = Song.create(genre: "Rock", artist: "Led Zepellin", title: "Stairway to Heaven", album_img_url: "https://www.thisdayinmusic.com/wp-content/uploads/2018/05/led-zeppelin-iv.jpg")
+
 
 puts "Creating posts..."
 post1 = Post.create(user_id: user2.id, song_id: song1.id, thoughts: "Totally what I needed to vibe out to rn", likes: 9)

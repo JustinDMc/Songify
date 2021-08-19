@@ -2,6 +2,7 @@ import './App.css';
 import React,{ useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {Provider, useDispatch, useSelector} from "react-redux"; 
+import { useHistory } from "react-router-dom";
 import {store} from "./store";
 import NavBar from "./NavBar"
 import About from "./About";
@@ -10,12 +11,15 @@ import Login from "./Login"
 import Feed from "./Feed";
 import Home from "./Home";
 import PostPage from './PostPage';
+import PostThoughts from "./PostThoughts"
 
 function App() {
+  const history = useHistory();
+  const [currentUser, setCurrentUser] = useState([]);
   const [songCollection, setSongCollection] = useState([]);
-  const [postCollection, setPostCollection] = useState([]);
   const [commentCollection, setCommentCollection] = useState([]);
   const [userCollection, setUserCollection] = useState([]);
+  const [allPosts, setAllPosts] = useState([])
 
   useEffect(() => {
     fetch("/songs")
@@ -26,7 +30,7 @@ function App() {
   useEffect(() => {
     fetch("/posts")
     .then(res => res.json())
-    .then(data => setPostCollection(data))
+    .then(data => setAllPosts(data))
   }, [])
 
   useEffect(() => {
@@ -41,16 +45,18 @@ function App() {
     .then(data => setCommentCollection(data))
   }, [])
 
+  console.log(allPosts)
+
   return (
     <div className="App">
       <Switch>
         <Route exact path ="/">
           <NavBar />
-          <Login />
+          <Login setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path ="/signup">
           <NavBar />
-          <Signup />
+          <Signup setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path ="/about">
           <NavBar />
@@ -62,11 +68,15 @@ function App() {
         </Route>
         <Route exact path ="/post_page">
           <NavBar />
-          <PostPage songCollection={songCollection}/>
+          <PostPage setAllPosts={setAllPosts} allPosts={allPosts} songCollection={songCollection} history={history}/>
         </Route>
+        {/* <Route exact path ="/post_thoughts">
+          <NavBar />
+          <PostThoughts />
+        </Route> */}
         <Route exact path ="/feed">
           <NavBar />
-          <Feed userCollection={userCollection} postCollection={postCollection}/>
+          <Feed commentCollection={commentCollection} userCollection={userCollection} allPosts={allPosts}/>
         </Route>
       </Switch>
     </div>

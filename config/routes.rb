@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :comments 
 
-  resources :posts, only: [:index, :create]
+  resources :posts
+
+  resources :logins, only: [:create]
 
   # overlap
   resources :songs, only: [:index, :create]

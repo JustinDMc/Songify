@@ -1,11 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Palette+Mosaic&family=Source+Code+Pro:wght@500&display=swap');
 
-/* @keyframes example {
-  0%   {background-color: red;}
-  25%  {background-color: yellow;}
-  50%  {background-color: blue;}
-  100% {background-color: green;}
-} */
+@keyframes example {
+  0%   {color: red;}
+  2%  {color: yellow;}
+  4%  {color: blue;}
+  6% {color: green;}
+  8%   {color: red;}
+  10%  {color: yellow;}
+  12%  {color: yellow;}
+  14%  {color: blue;}
+  16% {color: green;}
+  18%   {color: red;}
+  20%  {color: yellow;}
+  22%  {color: yellow;}
+  24%  {color: blue;}
+  26% {color: green;}
+  28%   {color: red;}
+  30%  {color: yellow;}
+  32%  {color: yellow;}
+  34%  {color: blue;}
+  36% {color: green;}
+  38%   {color: red;}
+  40%  {color: yellow;}
+  42%  {color: yellow;}
+  44%  {color: blue;}
+  46% {color: green;}
+  48%   {color: red;}
+  50%  {color: yellow;}
+  52%  {color: yellow;}
+  54%  {color: blue;}
+  56% {color: green;}
+  58%   {color: red;}
+  60%  {color: yellow;}
+  62%  {color: yellow;}
+  64%  {color: blue;}
+  66% {color: green;}
+  68%   {color: red;}
+  70%  {color: yellow;}
+  72%  {color: yellow;}
+  74%  {color: blue;}
+  76% {color: green;}
+  78%   {color: red;}
+  80%  {color: yellow;}
+  82%  {color: yellow;}
+  84%  {color: blue;}
+  86% {color: green;}
+  88%   {color: red;}
+  90%  {color: yellow;}
+  92%  {color: yellow;}
+  94%  {color: blue;}
+  96% {color: green;}
+  98%   {color: red;}
+  100%  {color: white;}
+}
 
 .App {
   background: url(https://images.wallpaperscraft.com/image/headphones_bw_headset_120277_1920x1080.jpg);
@@ -16,4 +63,9 @@
   font-family: 'Source Code Pro', monospace;
   /* animation-name: example; 
   animation-duration: 4s; */
+}
+
+.postUserName {
+  animation-name: example;
+  animation-duration: 150s;
 }

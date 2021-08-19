@@ -1,64 +1,56 @@
 import React, {useState} from 'react'
+import PostThoughts from "./PostThoughts";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import {NavLink} from "react-router-dom";
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
-function PostPage( {songCollection } ) {
-    const history = useHistory();
+function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
+    // const history = useHistory();
     const [genre, setGenre] = useState("");
     const [artist, setArtist] = useState("");
     const [songTitle, setSongTitle] = useState("");
     const [imageURL, setImageURL] = useState("");
-    const [thoughts, setThoughts] = useState("");
 
     const [songCreated, setSongCreated] = useState(true);
 
-    const song_id = songCollection.filter(song => song.title === songTitle).map(song => song.id)
+    const [allSongs, setAllSongs] = useState(songCollection)
+    const [songDigit, setSongDigit] = useState("") 
+    console.log(songDigit)
 
     async function handleSongSubmit(e){
-        setSongCreated(false);
+        setSongDigit([...allSongs].map(song => song.id).slice(-1)[0])
         e.preventDefault();
+        setSongDigit([...allSongs].map(song => song.id).slice(-1)[0])
+        setSongCreated(false);
         const song = {
             genre: genre,
             artist: artist,
             title: songTitle,
             album_img_url: imageURL
         }
-        const result = await fetch(`/songs`, {
+        const res = await fetch(`/songs`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(song)
-        });       
-    };
-
-    function handlePostSubmit(e){
-        const post = {
-            id: 5,
-            user_id: 1,
-            song_id: 11,
-            thoughts: thoughts,
-            likes: 0
-        }
-        fetch(`/posts`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(post)
-        });
-        // window.location.href = "/home";
+        });    
+        const songData = await res.json();
+        if(res.ok) {
+            setAllSongs([...allSongs, song])   
+        };
     }
 
     return (
         <div>
-            {songCreated? 
-            <form className="login-form" style={{backgroundColor: "white", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "475px", margin: "auto", marginTop: "250px", textAlign: "center"}} onSubmit={handleSongSubmit}>
-                <h1 style={{color: "#992b1d"}}>What Song Are You Sharing?</h1>
-                <label style={{fontSize: "24px"}}>Genre  </label>
-                <TextField style={{marginRight: "0px"}} size="small" variant="outlined" type="text" 
+            {songCreated ? 
+            <div>
+            <h1 style={{textAlign: "center", marginTop: "140px", fontSize: "80px", color: "white"}}>What Song Are You Sharing?</h1>
+            <form className="login-form" style={{backgroundColor: "black", opacity: "90%", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "475px", margin: "auto", marginTop: "110px", textAlign: "center"}} onSubmit={handleSongSubmit}>
+                <h1 style={{color: "white"}}>SONG INFO</h1>
+                <label style={{color: "white", fontSize: "24px"}}>Genre  </label>
+                <TextField style={{backgroundColor: "white"}} size="small" variant="outlined" type="text" 
                     placeholder="Genre..."
                     name="genre" 
                     value={genre}
@@ -66,8 +58,8 @@ function PostPage( {songCollection } ) {
                 />
                 <br></br>
                 <br></br>
-                <label style={{fontSize: "24px"}}>Artist  </label>
-                <TextField size="small" variant="outlined"
+                <label style={{color: "white", fontSize: "24px"}}>Artist  </label>
+                <TextField style={{backgroundColor: "white"}} size="small" variant="outlined"
                     placeholder="Artist..."
                     name="artist" 
                     value={artist}
@@ -75,8 +67,8 @@ function PostPage( {songCollection } ) {
                 />
                 <br></br>
                 <br></br>
-                <label style={{fontSize: "24px"}}>Song Title  </label>
-                <TextField size="small" variant="outlined"
+                <label style={{color: "white", fontSize: "24px"}}>Song Title  </label>
+                <TextField style={{backgroundColor: "white"}} size="small" variant="outlined"
                     placeholder="Song title..."
                     name="title"
                     value={songTitle}
@@ -84,8 +76,8 @@ function PostPage( {songCollection } ) {
                 />
                 <br></br>
                 <br></br>
-                <label style={{fontSize: "24px"}}>Album Cover URL  </label>
-                <TextField size="small" variant="outlined"
+                <label style={{color: "white", fontSize: "24px"}}>Album Cover URL  </label>
+                <TextField style={{backgroundColor: "white"}} size="small" variant="outlined"
                     placeholder="Image URL..."
                     name="image_url" 
                     value={imageURL}
@@ -93,24 +85,16 @@ function PostPage( {songCollection } ) {
                 />
                 <br></br>
                 <br></br>
-                <Button variant="contained" submit type="submit" value="button" style={{color: "black", fontWeight: "bold"}}>Add my thoughts!</Button>
+                <Button variant="contained" style={{color: "black", fontWeight: "bold"}}>
+                    Confirm
+                </Button>
+                <Button variant="contained" submit type="submit" value="button" style={{color: "black", fontWeight: "bold"}}>
+                    Add my thoughts!
+                </Button>
             </form> 
+            </div>
             :
-            <form className="login-form" style={{backgroundColor: "white", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "350px", margin: "auto", marginTop: "250px", textAlign: "center"}} onSubmit={handlePostSubmit}>
-                <h1 style={{color: "#992b1d"}}>What Are Your Thoughts About This Song?</h1>
-                <label style={{fontSize: "24px"}}>Thoughts  </label>
-                <TextField size="medium" variant="outlined" type="text" 
-                    placeholder="What do you think?"
-                    name="genre" 
-                    multiline
-                    maxRows={4}
-                    value={thoughts}
-                    onChange={(e) => setThoughts(e.target.value)}
-                />
-                <br></br>
-                <br></br>
-                <Button variant="contained" submit type="submit" value="button" style={{color: "black", fontWeight: "bold"}}>Publish Post</Button>
-            </form> 
+            <PostThoughts setAllPosts={setAllPosts} allPosts={allPosts} songDigit={songDigit} history={history}/>
             }
         </div>
     )
