@@ -3,7 +3,7 @@ import { Navbar } from "./styled";
 import { HeaderLogo } from "./styled"
 import {NavLink} from "react-router-dom"
 
-function NavBar() {
+function NavBar( { currentUser } ) {
 
     return (
         <div className="Navbar-Div">
@@ -12,13 +12,16 @@ function NavBar() {
                     <h1 className="header" style={{color: "white", margin: "0px"}}
                     > <HeaderLogo style={{marginBottom: "6px"}}/> Songify </h1> 
                 </div>
+                <label style={{color: "green", marginLeft: "10px"}}>Welcome: </label>
+                <label style={{color: "green", marginLeft: "5px"}}>JusMc </label>
+                {/* <label style={{color: "green", marginRight: "5px"}}>{currentUser.username} </label> */}
                 <div className="NavLinks" style={{flex: "80%", textAlign: "right", marginRight: "40px"}}>
-                    {/* <label><h3 style={{color: "white"}}>Welcome Justin</h3></label> */}
                     <NavLink exact to="/about">About</NavLink>
                     <NavLink exact to="/">Login</NavLink>
                     <NavLink exact to="/signup">Signup</NavLink>
                     <NavLink exact to="/home">Home</NavLink>
                     <NavLink exact to="/feed">Feed</NavLink>
+                    <NavLink exact to="/feed">Logout</NavLink>
                 </div>
             </Navbar>
         </div>

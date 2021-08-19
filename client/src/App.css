@@ -65,7 +65,20 @@
   animation-duration: 4s; */
 }
 
+.About-Page {
+  display: flex;
+  flex-direction: column;
+}
+
 .postUserName {
   animation-name: example;
   animation-duration: 150s;
+}
+
+.about-top-half { 
+  background: url(https://images.wallpaperscraft.com/image/headphones_music_heart_121360_1280x720.jpg);
+  background-repeat: no-repeat;
+  background-position: 0px 500px;
+  background-size: contain;
+  width: 100vw;
 }
