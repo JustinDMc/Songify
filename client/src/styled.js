@@ -4,6 +4,9 @@ import { Heart } from "@styled-icons/boxicons-regular/Heart"
 import { Comment } from "@styled-icons/boxicons-regular/Comment"
 import { DotsHorizontal } from "@styled-icons/boxicons-regular/DotsHorizontal"
 import { Music } from "@styled-icons/crypto/Music"
+import { Identification } from "@styled-icons/heroicons-outline/Identification"
+import { Headphone } from "@styled-icons/boxicons-regular/Headphone"
+import { HandThumbsUp } from "@styled-icons/bootstrap/HandThumbsUp"
 
 
 export const Navbar = styled.nav`
@@ -38,4 +41,13 @@ export const CommentLogo = styled(Comment)`
 `
 
 export const DotsLogo = styled(DotsHorizontal)`
+`
+
+export const WhoWeAreLogo = styled(Identification)`
+`
+
+export const HeadphoneLogo = styled(Headphone)`
+`
+
+export const ThumbLogo = styled(HandThumbsUp)`
 `
