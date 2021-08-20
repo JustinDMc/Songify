@@ -32,3 +32,4 @@ function Feed( { commentCollection, allPosts, userCollection } ) {
 }
 
 export default Feed;
+
