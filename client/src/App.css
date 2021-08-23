@@ -21,6 +21,22 @@
   animation-duration: 150s;
 }
 
+.side-scroller { 
+  text-align: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  max-width: 300px;
+  /* min-height: 300px; */
+  border: 1px solid black
+}
+
+.card {
+  margin: 5px;
+  display: inline-block;
+  max-height: 280px;
+}
+
 .about-top-half { 
   /* background: url(https://images.wallpaperscraft.com/image/headphones_music_heart_121360_1920x1080.jpg);
   background-repeat: initial;
