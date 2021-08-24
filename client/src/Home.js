@@ -12,20 +12,10 @@ function Home() {
 
             <h3 style={{fontSize: "30px", color: "white"}}>The one stop for ALL music sharing on the web.</h3>
 
-            {/* <div className="side-scroller">
-                <div className="card"><h2>Card</h2></div>
-                <div className="card"><h2>Card</h2></div>
-                <div className="card"><h2>Card</h2></div>
-                <div className="card"><h2>Card</h2></div>
-                <div className="card"><h2>Card</h2></div>
-                <div className="card"><h2>Card</h2></div>
-                <div className="card"><h2>Card</h2></div>
-            </div> */}
-
             <br></br>
 
-            <Button style={{width: "165px", display: "inline-block", fontSize: "1em", margin: "1em", padding: "0.25em 1em", border: "2px solid white", borderRadius: "3px", color: "white"}}> Take Quiz 
-            
+            <Button style={{width: "165px", display: "inline-block", fontSize: "1em", margin: "1em", padding: "0.25em 1em", border: "2px solid white", borderRadius: "3px", color: "white"}}> 
+                <NavLink style={{color: "white", textDecoration: "none"}}exact to="/quiz_page">Take Quiz</NavLink> 
             </Button>
 
             <Button style={{width: "165px", display: "inline-block", fontSize: "1em", margin: "1em", padding: "0.25em 1em", border: "2px solid #ff6666", borderRadius: "3px", backgroundColor: "#ff6666", color: "white"}}>

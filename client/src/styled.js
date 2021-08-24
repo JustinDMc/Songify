@@ -7,6 +7,8 @@ import { Music } from "@styled-icons/crypto/Music"
 import { Identification } from "@styled-icons/heroicons-outline/Identification"
 import { Headphone } from "@styled-icons/boxicons-regular/Headphone"
 import { HandThumbsUp } from "@styled-icons/bootstrap/HandThumbsUp"
+import { InfoCircle } from "@styled-icons/bootstrap/InfoCircle"
+import { ArrowDownRight } from "@styled-icons/bootstrap/ArrowDownRight"
 
 
 export const Navbar = styled.nav`
@@ -50,4 +52,10 @@ export const HeadphoneLogo = styled(Headphone)`
 `
 
 export const ThumbLogo = styled(HandThumbsUp)`
+`
+
+export const InfoLogo = styled(InfoCircle)`
+`
+
+export const ArrowLogo = styled(ArrowDownRight)`
 `

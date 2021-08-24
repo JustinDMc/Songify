@@ -7,9 +7,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {NavLink} from "react-router-dom";
 import { HeartLogo } from "./styled"
 import { CommentLogo } from "./styled"
+import { ArrowLogo } from "./styled"
 // import { useHistory } from 'react-router-dom'
 
 function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
@@ -20,7 +20,7 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
     const [songTitle, setSongTitle] = useState("");
     const [songTitle2, setSongTitle2] = useState(<b style={{marginLeft: "63px"}}>-------</b>)
     const [imageURL, setImageURL] = useState("");
-    const [imageURL2, setImageURL2] = useState(<div style={{backgroundColor: "red", width: "90px", height: "90px", marginLeft: "52px", marginTop: "28px"}}><h3 style={{textAlign: "center", paddingTop: "15px"}}>album image</h3></div>)
+    const [imageURL2, setImageURL2] = useState(<div style={{backgroundColor: "#ff6666", width: "90px", height: "90px", marginLeft: "52px", marginTop: "28px"}}><h3 style={{textAlign: "center", paddingTop: "15px"}}>album image</h3></div>)
 
     const [songCreated, setSongCreated] = useState(true);
 
@@ -80,41 +80,51 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
     }
 
     return (
-        <div>
+        <div style={{opacity: "90%", backgroundColor: "#fffff0", height: "90vh"}}>
             {songCreated ? 
             <div style={{display: "flex"}}>
-                <div style={{flex: "50%", backgroundColor: "#fffff0", height: "91vh"}}>
-                <h1 style={{textAlign: "center", marginTop: "140px", fontSize: "40px", color: "black"}}>What Song Are You Sharing?</h1>
-                <form className="login-form" style={{backgroundColor: "black", opacity: "90%", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "475px", margin: "auto", textAlign: "center"}} onSubmit={handleSongSubmit}>
-                    <h1 style={{color: "white"}}>SONG INFO</h1>
-                    <label style={{color: "white", fontSize: "24px"}}>Genre  </label>
-                    <TextField style={{backgroundColor: "white"}} size="small" variant="outlined" type="text" 
-                        placeholder="Genre..."
+                <div style={{flex: "50%"}}>
+
+                {/* Starts the form div */}
+                <h1 style={{marginLeft:"105px", paddingTop:"20px"}}>Step 1: Enter Song Info</h1>
+                <div style={{display: "flex", marginTop: "30px", marginLeft: "105px"}}>
+                    <div>
+                        <img style={{height: "430.25px", width: "400px"}} src="https://i.pinimg.com/originals/99/4f/9a/994f9ac00dccd0d216529a285930d95c.jpg" />
+                    </div>
+                <form className="login-form" style={{backgroundColor: "black", opacity: "90%", border: '1px solid black', padding: "8px", height: "413px", width: "400px"}} onSubmit={handleSongSubmit}>
+                    <h1 style={{color: "white", marginLeft: "15px"}}>Song Information</h1>
+                    <br />
+                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "15px"}} 
+                        type="text" 
+                        placeholder="Genre"
                         name="genre" 
                         value={genre}
                         onChange={(e) => setGenre(e.target.value)}
                     />
                     <br></br>
                     <br></br>
-                    <label style={{color: "white", fontSize: "24px"}}>Artist  </label>
-                    <TextField style={{backgroundColor: "white"}} size="small" variant="outlined"
-                        placeholder="Artist..."
+                    <br />
+                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "15px"}}
+                        type="text"              
+                        placeholder="Artist"
                         name="artist" 
                         value={artist}
                         onChange={handleArtistChange}
                     />
                     <br></br>
                     <br></br>
-                    <label style={{color: "white", fontSize: "24px"}}>Song Title  </label>
-                    <TextField style={{backgroundColor: "white"}} size="small" variant="outlined"
-                        placeholder="Song title..."
+                    <br />
+                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "15px"}}
+                        type="text"
+                        placeholder="Song Title"
                         name="title"
                         value={songTitle}
                         onChange={handleSongTitleChange} 
                     />
                     <br></br>
                     <br></br>
-                    <label style={{color: "white", fontSize: "24px"}}>Album Cover  </label>
+                    <br />
+                    <label style={{color: "white", fontSize: "18px", marginLeft: "15px", fontWeight: "bold"}}>Album Cover  </label>
                     <label style={{width: "100px"}}>
                     <Button onClick={handleClickOpen} style={{border: "2px solid black", backgroundColor: "white", color: "black", borderRadius: "8px"}} size="small">Select</Button>
                     <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" useref="entry-form" style={{marginTop: "100px"}}>
@@ -146,22 +156,27 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                     <br></br>
                     <br></br>
 
-                    <Button variant="contained" submit type="submit" value="button" style={{color: "black", fontWeight: "bold"}}>
+                    <Button variant="contained" submit type="submit" value="button" style={{color: "white", fontWeight: "bold", marginLeft: "25px", backgroundColor: "green", marginTop: "20px"}}>
                     Add my thoughts!
                     </Button>
                 </form> 
+                <ArrowLogo style={{height: "140px", zIndex: "10", marginTop: "150px", width: "250px"}}/>
+                </div>
+                {/* The line above ends the form div */}
+
                 </div>
                 <div style={{flex: "50%"}}>
 
-                    <h1 style={{marginTop: "140px", fontSize: "40px", color: "white", textAlign: "center"}}>Watch your post come to life!</h1>
+                    <h1 style={{marginLeft: "50px", marginTop: "300px", fontSize: "32px", color: "black"}}>Step 2: See Your Post Being Made</h1>
 
-                    <div style={{borderRadius: "8px", backgroundColor: "#000000", opacity: "90%", height: "400px", width: "400px", margin: "auto"}}>
+                    <div style={{borderRadius: "8px", backgroundColor: "#000000", opacity: "90%", height: "400px", width: "400px", marginLeft: "150px"}}>
                         <img src="https://data.whicdn.com/images/344524632/original.jpg" style={{maxLength: "50px", maxHeight: "50px", marginLeft: "15px", marginTop: "10px", borderRadius: "50%"}} />
                         <label className="postUserName"style={{fontSize: "18px", fontWeight: "bold"}}>JusMc</label>
                         <br />
                         <br />
                         <div style={{width: "200px", height: "200px", backgroundColor: "#808080", borderRadius: "12px", border: "3px solid white", marginLeft: "25%", marginTop: "0px"}}>
                             {imageURL2}
+                            <br />
                             <br />
                             {artist2}
                             <br></br>
