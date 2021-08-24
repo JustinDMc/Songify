@@ -11,7 +11,9 @@ import Login from "./Login"
 import Feed from "./Feed";
 import Home from "./Home";
 import PostPage from './PostPage';
-import PostThoughts from "./PostThoughts"
+import QuizPage from "./QuizPage";
+import PostThoughts from "./PostThoughts";
+import QuizResult from "./QuizResult";
 
 function App() {
   const history = useHistory();
@@ -65,6 +67,14 @@ function App() {
         <Route exact path ="/home">
           <NavBar currentUser={currentUser}/>
           <Home />
+        </Route>
+        <Route exact path ="/quiz_page">
+          <NavBar currentUser={currentUser}/>
+          <QuizPage />
+        </Route>
+        <Route exact path ="/quiz_result">
+          <NavBar currentUser={currentUser}/>
+          <QuizResult />
         </Route>
         <Route exact path ="/post_page">
           <NavBar currentUser={currentUser}/>
