@@ -17,9 +17,17 @@
   flex-direction: column;
 }
 
+.post-page {
+  background: url(https://wallpaperaccess.com/full/770378.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 90.7vh;
+  background-position: fixed;
+}
+
 .postUserName {
-  animation-name: example;
-  animation-duration: 150s;
+  color: white;
 }
 
 .side-scroller { 
@@ -70,7 +78,7 @@
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #ff6666;
+  background: white;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 .lds-ellipsis div:nth-child(1) {
@@ -114,7 +122,7 @@
   }
 }
 
-@keyframes example {
+/* @keyframes example {
   0%   {color: red;}
   0.2%  {color: yellow;}
   0.4%  {color: blue;}
@@ -267,5 +275,5 @@
   29.8%   {color: red;}
   30.0%  {color: white;}
   
-}
+} */
 
