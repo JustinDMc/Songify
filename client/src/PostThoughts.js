@@ -30,8 +30,8 @@ function PostThoughts( { history, allPosts, setAllPosts, songDigit } ) {
     }
 
     return (
-        <div>
-            <h1 style={{textAlign: "center", marginTop: "140px", fontSize: "80px", color: "white"}}>What are your thoughts on this song?</h1>
+        <div style={{opacity: "90%", backgroundColor: "#fffff0", height: "90.7vh", marginTop: "-56px"}}>
+            <h1 style={{textAlign: "center", paddingTop: "140px", fontSize: "80px"}}>What are your thoughts on this song?</h1>
             <form className="login-form" style={{backgroundColor: "black", opacity: "90%", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "475px", margin: "auto", marginTop: "110px", textAlign: "center"}} onSubmit={handlePostSubmit}>
                 <h1 style={{color: "#808080"}}>What do you think?</h1>
                 <label style={{color: "white", fontSize: "24px"}}>Thoughts  </label>

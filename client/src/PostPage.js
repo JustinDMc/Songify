@@ -80,21 +80,21 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
     }
 
     return (
-        <div style={{opacity: "90%", backgroundColor: "#fffff0", height: "90vh"}}>
+        <div className="post-page">
             {songCreated ? 
             <div style={{display: "flex"}}>
-                <div style={{flex: "50%"}}>
+                <div>
 
                 {/* Starts the form div */}
-                <h1 style={{marginLeft:"105px", paddingTop:"20px"}}>Step 1: Enter Song Info</h1>
-                <div style={{display: "flex", marginTop: "30px", marginLeft: "105px"}}>
-                    <div>
+                {/* <h1 style={{marginLeft:"105px", paddingTop:"20px"}}>Step 1: Enter Song Info</h1> */}
+                <div style={{display: "flex", marginTop: "7%", marginLeft: "21%", position: "relative"}}>
+                    {/* <div>
                         <img style={{height: "430.25px", width: "400px"}} src="https://i.pinimg.com/originals/99/4f/9a/994f9ac00dccd0d216529a285930d95c.jpg" />
-                    </div>
-                <form className="login-form" style={{backgroundColor: "black", opacity: "90%", border: '1px solid black', padding: "8px", height: "413px", width: "400px"}} onSubmit={handleSongSubmit}>
-                    <h1 style={{color: "white", marginLeft: "15px"}}>Song Information</h1>
+                    </div> */}
+                <form className="login-form" style={{backgroundColor: "black", opacity: "90%", border: "4px solid #ff6666", padding: "8px", height: "563px", width: "1200px", borderRadius: "4px"}} onSubmit={handleSongSubmit}>
+                    <h1 style={{color: "white", marginLeft: "30px", marginTop: "60px"}}>ENTER YOUR <br /> SONG INFORMATION</h1>
                     <br />
-                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "15px"}} 
+                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "30px", width: "500px"}} 
                         type="text" 
                         placeholder="Genre"
                         name="genre" 
@@ -104,7 +104,7 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                     <br></br>
                     <br></br>
                     <br />
-                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "15px"}}
+                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "30px", width: "500px"}}
                         type="text"              
                         placeholder="Artist"
                         name="artist" 
@@ -114,7 +114,7 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                     <br></br>
                     <br></br>
                     <br />
-                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "15px"}}
+                    <input  style={{backgroundColor: "black", border: "none", borderBottom: "2px solid gray", marginLeft: "30px", width: "500px"}}
                         type="text"
                         placeholder="Song Title"
                         name="title"
@@ -124,11 +124,11 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                     <br></br>
                     <br></br>
                     <br />
-                    <label style={{color: "white", fontSize: "18px", marginLeft: "15px", fontWeight: "bold"}}>Album Cover  </label>
+                    <label style={{color: "white", fontSize: "18px", marginLeft: "30px", fontWeight: "bold"}}>Album Cover  </label>
                     <label style={{width: "100px"}}>
-                    <Button onClick={handleClickOpen} style={{border: "2px solid black", backgroundColor: "white", color: "black", borderRadius: "8px"}} size="small">Select</Button>
+                    <Button onClick={handleClickOpen} style={{border: "2px solid black", backgroundColor: "white", color: "black", borderRadius: "8px"}} size="small">Select </Button>
                     <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" useref="entry-form" style={{marginTop: "100px"}}>
-                        <DialogTitle id="form-dialog-title">Select the album image-</DialogTitle>
+                        <DialogTitle id="form-dialog-title">Select an album image-</DialogTitle>
                         <br></br>
                         <DialogContent>
                             <DialogContentText>
@@ -147,6 +147,7 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                         </DialogActions>
                     </Dialog>
                     </label>
+                    <label style={{color: "white", marginLeft: "8px"}}><em>--requires genre to be selected--</em></label>
                     {/* <TextField style={{backgroundColor: "white"}} size="small" variant="outlined"
                         placeholder="Image URL..."
                         name="image_url" 
@@ -156,25 +157,27 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                     <br></br>
                     <br></br>
 
-                    <Button variant="contained" submit type="submit" value="button" style={{color: "white", fontWeight: "bold", marginLeft: "25px", backgroundColor: "green", marginTop: "20px"}}>
+                    <Button variant="contained" submit type="submit" value="button" style={{color: "white", fontWeight: "bold", marginLeft: "30px", backgroundColor: "green", marginTop: "20px"}}>
                     Add my thoughts!
                     </Button>
                 </form> 
-                <ArrowLogo style={{height: "140px", zIndex: "10", marginTop: "150px", width: "250px"}}/>
+                {/* <ArrowLogo style={{height: "140px", zIndex: "10", marginTop: "150px", width: "250px", marginLeft: "40px"}}/> */}
                 </div>
                 {/* The line above ends the form div */}
 
                 </div>
-                <div style={{flex: "50%"}}>
+                <div>
 
-                    <h1 style={{marginLeft: "50px", marginTop: "300px", fontSize: "32px", color: "black"}}>Step 2: See Your Post Being Made</h1>
+                    {/* <h1 style={{marginLeft: "50px", marginTop: "300px", fontSize: "32px", color: "black"}}>Step 2: See Your Post Being Made</h1> */}
 
-                    <div style={{borderRadius: "8px", backgroundColor: "#000000", opacity: "90%", height: "400px", width: "400px", marginLeft: "150px"}}>
-                        <img src="https://data.whicdn.com/images/344524632/original.jpg" style={{maxLength: "50px", maxHeight: "50px", marginLeft: "15px", marginTop: "10px", borderRadius: "50%"}} />
+                    <div style={{position: "fixed", borderRadius: "8px", backgroundColor: "black", height: "550px", width: "440px", marginLeft: "-150px", zIndex: 1, marginTop: "200px", border: "4px solid #ff6666"}}>
+                        <h1 style={{color: "white", marginLeft: "15px", marginTop: "30px", textAlign: "center"}}>LIVE DEMO</h1>
+                        <br />
+                        <img src="https://data.whicdn.com/images/344524632/original.jpg" style={{maxLength: "50px", maxHeight: "50px", marginLeft: "25px", marginTop: "10px", borderRadius: "50%"}} />
                         <label className="postUserName"style={{fontSize: "18px", fontWeight: "bold"}}>JusMc</label>
                         <br />
                         <br />
-                        <div style={{width: "200px", height: "200px", backgroundColor: "#808080", borderRadius: "12px", border: "3px solid white", marginLeft: "25%", marginTop: "0px"}}>
+                        <div style={{width: "200px", height: "200px", backgroundColor: "white", borderRadius: "12px", border: "3px solid white", marginLeft: "25%", marginTop: "0px"}}>
                             {imageURL2}
                             <br />
                             <br />
@@ -183,7 +186,8 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
                             {songTitle2}
                         </div>
                         <br />
-                        <label style={{marginLeft: "15px"}}>{liked}</label>
+                        <br />
+                        <label style={{marginLeft: "25px"}}>{liked}</label>
                         <label style={{marginLeft: "25px"}}>{commentIcon}</label>
                         
                     </div>
