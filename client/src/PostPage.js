@@ -39,7 +39,8 @@ function PostPage( {allPosts, setAllPosts, songCollection, history } ) {
             genre: genre,
             artist: artist,
             title: songTitle,
-            album_img_url: "https://m.media-amazon.com/images/I/A1ZTtDmwPLL._SS500_.jpg"
+            album_img_url: "https://m.media-amazon.com/images/I/A1ZTtDmwPLL._SS500_.jpg",
+            soundcloud_url: "https://soundcloud.com/thisiscoin/let-it-all-out-10-05"
         }
         const res = await fetch(`/songs`, {
             method: "POST",
