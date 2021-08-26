@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_212553) do
     t.string "artist"
     t.string "title"
     t.string "album_img_url"
+    t.string "soundcloud_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
