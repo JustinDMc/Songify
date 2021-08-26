@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import Button from '@material-ui/core/Button';
 import Confetti from 'react-confetti'
 
-function QuizResult() {
+function QuizResult( { setAllPosts, allPosts } ) {
+
+    const history = useHistory();
 
     const [seconds, setSeconds] = useState(3.4)
 
@@ -13,6 +18,36 @@ function QuizResult() {
 
     const timer2 = () => {
         setSeconds2(seconds2 - 1)
+    }
+
+    const [placeholder, setPlaceHolder] = useState("What Do You Think?")
+
+    const focusEvent = () => {
+        setPlaceHolder("")
+    }
+
+    const [thoughts, setThoughts] = useState("");
+
+    async function handlePostSubmit(e){
+        e.preventDefault();
+        const post = {
+            user_id: 1,
+            song_id: 19,
+            thoughts: thoughts,
+            likes: 0
+        }
+        const res = await fetch(`/posts`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(post)
+        });
+        const postData = await res.json();
+        if(res.ok) {
+            setAllPosts([...allPosts, post])
+            history.push("/home")
+        };
     }
 
     return (
@@ -43,9 +78,9 @@ function QuizResult() {
                 height="900"
                 numberOfPieces="200"
                 />
-                <h1 style={{color: "white", textAlign: "center"}}>Cool stuff is gonna go here</h1>
+                {/* <h1 style={{color: "white", textAlign: "center"}}>Cool stuff is gonna go here</h1> */}
                 <div>
-                    <img style={{width: "250px", height: "250px", marginLeft: "150px"}} src="https://images.genius.com/a16c1e511ecf7741217439e0c49dedcd.999x999x1.jpg"/>
+                    <img style={{width: "250px", height: "250px", marginLeft: "150px", marginTop: "100px"}} src="https://images.genius.com/a16c1e511ecf7741217439e0c49dedcd.999x999x1.jpg"/>
                     <br />
                     <br />
                     <h2 style={{color: "white", textAlign: "center"}}>The Wallows</h2>
@@ -62,7 +97,24 @@ function QuizResult() {
                 <br />
                 This song is best listened to with a warm coffee somewhere quiet, where you can fully absorb the message and meaning behind the lyrics.
                 </p>
-
+                <br />
+                <form onSubmit={handlePostSubmit}>
+                <input 
+                    onFocus={focusEvent}
+                    placeholder={placeholder} 
+                    value={thoughts}
+                    onChange={(e) => setThoughts(e.target.value)}
+                    className="results-p" 
+                    type="text" 
+                    style={{fontSize: "14px", width: "450px", marginLeft: "50px", height: "40px", marginBottom: "50px", borderRadius: "8px"}}>
+                </input>
+                <Button variant="contained" submit type="submit" value="button" style={{color: "white", fontWeight: "bold", marginLeft: "20.5%", backgroundColor: "#ff6666", marginBottom: "20px"}}>
+                    <NavLink style={{color: "white", textDecoration: "none"}}exact to="/home">Cancel</NavLink>
+                </Button>
+                <Button variant="contained" submit type="submit" value="button" style={{color: "white", fontWeight: "bold", marginLeft: "20.5%", backgroundColor: "green", marginBottom: "20px"}}>
+                    Post Result!
+                </Button>
+                </form>
             </div>
 
             </div>

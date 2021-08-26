@@ -56,7 +56,7 @@ function QuizPage() {
                 </div> */}
             </div>
 
-            <div className="quiz-div" style={{border: "5px solid black", marginLeft: "475px", marginRight: "475px", backgroundColor: "#fffff0", opacity: "90%", height: "600px"}}> 
+            <div className="quiz-div" style={{border: "5px solid black", marginLeft: "24%", marginRight: "24%", backgroundColor: "#fffff0", opacity: "90%", height: "600px"}}> 
                     {/* Question 1 */}
                 <div className="quiz-question-div" style={{marginTop: "60px"}}>
                     <h1 style={{marginLeft: "100px"}}>Question 1/5</h1>

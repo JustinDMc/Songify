@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { HeartLogo } from "./styled"
-import { CommentLogo } from "./styled"
-import { DotsLogo } from "./styled"
+import React, { useState, useEffect } from 'react';
+import { HeartLogo } from "./styled";
+import { CommentLogo } from "./styled";
+import { DotsLogo } from "./styled";
+import ReactPlayer from "react-player";
 
 function Post( { commentCollection, userCollection, post } ) {
     const [newComment, setNewComment] = useState("")
@@ -55,6 +56,7 @@ function Post( { commentCollection, userCollection, post } ) {
 
                 {/* Each post's song information */}
                 <div className="post-song-content" style={{textAlign: "center", backgroundColor: "#808080", maxWidth: "350px", minHeight: "350px", borderRadius: "12px", marginLeft: "32%", border: "5px solid white"}}>
+                    <ReactPlayer style={{maxWidth: "75px", maxHeight: "125px", position: "relative"}} url="https://soundcloud.com/justinbieber/yummy-1" playicon/>
                     <img src={post.song.album_img_url} style={{maxLength: "225px", maxHeight: "225px", marginTop: "15px"}}/>
                     <h4 style={{color: "black"}}>{post.song.title}</h4>   
                     <h4 style={{color: "black"}}>{post.song.artist}</h4>   

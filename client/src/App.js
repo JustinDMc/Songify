@@ -5,6 +5,7 @@ import {Provider, useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import {store} from "./store";
 import NavBar from "./NavBar"
+import NavBar2 from "./NavBar2"
 import About from "./About";
 import Signup from "./Signup"
 import Login from "./Login"
@@ -61,23 +62,23 @@ function App() {
           <Signup setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path ="/about">
-          <NavBar currentUser={currentUser}/>
+          <NavBar2 currentUser={currentUser}/>
           <About />
         </Route>
         <Route exact path ="/home">
-          <NavBar currentUser={currentUser}/>
+          <NavBar2 currentUser={currentUser}/>
           <Home />
         </Route>
         <Route exact path ="/quiz_page">
-          <NavBar currentUser={currentUser}/>
+          <NavBar2 currentUser={currentUser}/>
           <QuizPage />
         </Route>
         <Route exact path ="/quiz_result">
-          <NavBar currentUser={currentUser}/>
-          <QuizResult />
+          <NavBar2 currentUser={currentUser}/>
+          <QuizResult setAllPosts={setAllPosts} allPosts={allPosts} />
         </Route>
         <Route exact path ="/post_page">
-          <NavBar currentUser={currentUser}/>
+          <NavBar2 currentUser={currentUser}/>
           <PostPage setAllPosts={setAllPosts} allPosts={allPosts} songCollection={songCollection} history={history}/>
         </Route>
         {/* <Route exact path ="/post_thoughts">
@@ -85,7 +86,7 @@ function App() {
           <PostThoughts />
         </Route> */}
         <Route exact path ="/feed">
-          <NavBar />
+          <NavBar2 />
           <Feed commentCollection={commentCollection} userCollection={userCollection} allPosts={allPosts}/>
         </Route>
       </Switch>

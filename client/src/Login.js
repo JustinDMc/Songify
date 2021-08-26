@@ -34,7 +34,7 @@ export default function Login({setCurrentUser}) {
 
 
     return (
-        <div style={{textAlign: "center", margin: "auto"}}>
+        <div style={{textAlign: "center"}}>
             <form className="login-form" onSubmit={handleSubmit} style={{backgroundColor: "black", opacity: "90%", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "300px", margin: "auto", marginTop: "250px", textAlign: "center"}}>
                 <h1 style={{color: "#992b1d"}}>Songify</h1>
                 <br></br>
