@@ -36,15 +36,16 @@ function Signup( {setCurrentUser } ) {
 
   return (
       <div style={{textAlign: 'center'}}>
-          <form onSubmit={handleSubmit} style={{backgroundColor: "white", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "300px", padding: "8px", margin: "auto", marginTop: "250px"}}>
-          <h1 style={{color: "#cf3f0a"}}>Songify</h1>
+          <form onSubmit={handleSubmit} style={{backgroundColor: "black", border: '1px solid black', borderRadius: "8px", padding: "8px", width: "300px", padding: "8px", margin: "auto", marginTop: "250px"}}>
+          <h1 style={{color: "#992b1d"}}>Songify</h1>
           <br></br>
-              <h2>Sign up</h2>
+              <h2 style={{color: "white"}}>Sign up</h2>
               <TextField size="small" variant="outlined" 
                   type="text" 
                   placeholder="Username" 
                   name="username" 
                   value={username} 
+                  style={{backgroundColor: "white"}}
                   onChange={(e) => setUserName(e.target.value)}
                   />
               <br></br>
@@ -54,6 +55,7 @@ function Signup( {setCurrentUser } ) {
                   placeholder="Password"
                   name="password"
                   value={password} 
+                  style={{backgroundColor: "white"}}
                   onChange={(e) => setPassword(e.target.value)}
                   />
               <br></br>
@@ -63,6 +65,7 @@ function Signup( {setCurrentUser } ) {
                   placeholder="Enter your profile pic URL" 
                   name="home_address" 
                   value={profilePicUrl} 
+                  style={{backgroundColor: "white"}}
                   onChange={(e) => setProfilePicUrl(e.target.value)}
                   />
               <br></br>

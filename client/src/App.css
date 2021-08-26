@@ -16,15 +16,15 @@
   display: flex;
   flex-direction: column;
 }
-
+/* 
 .post-page {
-  background: url(https://wallpaperaccess.com/full/770378.jpg);
+  background: url(https://thumbs.dreamstime.com/t/old-black-white-background-dark-top-border-abstract-vintage-muted-monochrome-colors-grunge-style-tex-texture-pattern-158115303.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   min-height: 90.7vh;
   background-position: fixed;
-}
+} */
 
 .postUserName {
   color: white;
@@ -52,10 +52,25 @@
   max-height: 280px;
 }
 
-::placeholder {
+input[type="text"]::placeholder {
   color: white;
   font-weight: bold;
   font-size: 18px;
+}
+
+input[type="text"]::placeholder {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="text"].results-p::placeholder {
+  color: black;
+}
+
+input[type="text"].results-p:focus {
+  font-size: 14px;
+
 }
 
 .about-top-half { 
